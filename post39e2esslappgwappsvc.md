@@ -11,7 +11,7 @@ The important points to note:
 
 
 A diagram for this is shown below
-![Overview](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvcOverall.png)
+![Overview](e2eSSLAppGWAppSvcOverall.png)
 
 
 > The steps of creating the Application Gateway and the backend pools are not explained in detail in this post. Rather the more important points/caveats are highlighted
@@ -20,7 +20,7 @@ A diagram for this is shown below
 ## First create an Azure public DNS zone azcloudhub.com and configure GoDaddy to delegate the DNS management of azcloudhub.com to Azure DNS
 
 
-![DNSdelegation](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc3.png)
+![DNSdelegation](e2eSSLAppGWAppSvc3.png)
 
 
 
@@ -28,60 +28,60 @@ A diagram for this is shown below
 
 Configure the App Service as normal, and set the custom domain setting as below. Copy the CNAME and TXT record to the Azure DNS zone that was created. Notice the Name Server records in the Azure DNS zone which is what has been copied over to GoDaddy
 
-![appservicecustomdomain](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc1.png)
+![appservicecustomdomain](e2eSSLAppGWAppSvc1.png)
 
 Azure DNS zone configuration
 
-![OverrideHostname](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc2.png)
+![OverrideHostname](e2eSSLAppGWAppSvc2.png)
 
 
 ## Generate self-signed certificate in Azure Key Vault with CN=www.azcloudhub.com
 
-![selfsigned](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc4.png)
+![selfsigned](e2eSSLAppGWAppSvc4.png)
 
 
 ## Create managed identity for the App GW to access the certificate in Key Vault and assigned necessary permissions in Key Vault Access Policies
 
-![WindowsClientDNS](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc5.png)
+![WindowsClientDNS](e2eSSLAppGWAppSvc5.png)
 
 
 ## App GW version
 
-![appgwversion](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc10.png)
+![appgwversion](e2eSSLAppGWAppSvc10.png)
 
 ## Listener settings of App GW
 
 Set to use the self signed certificate from Key Vault
 
-![appgwlistenersettings](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc9.png)
+![appgwlistenersettings](e2eSSLAppGWAppSvc9.png)
 
 
 ## Backend settings of App GW 
 
 Since the App Service certificate is managed and issued by public CA, select "Well known CA certificate" and set to use custom health probe
 
-![appgwbackendsettings](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc6.png)
+![appgwbackendsettings](e2eSSLAppGWAppSvc6.png)
 
 ## Health probe settings of App GW 
 
-![appgwhealthprobe](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc7.png)
+![appgwhealthprobe](e2eSSLAppGWAppSvc7.png)
 
 ## Verify backend pool is healthy
 
-![appgwbackendhealth](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc8.png)
+![appgwbackendhealth](e2eSSLAppGWAppSvc8.png)
 
 ## Modify host file entry on client to map AppGW public IP to www.azcloudhub.com
 
-![hostfile](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc11.png)
+![hostfile](e2eSSLAppGWAppSvc11.png)
 
 ## verify access to https://www.azcloudhub.com
 
-![test](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc12.png)
+![test](e2eSSLAppGWAppSvc12.png)
 
 ## Verify direct access to the App Service
 
 Rightfully you should be configuring Inbound Access Restrictions on the App Service so that it is accessible only via the App Gateway. Otherwise there's nothing stopping clients from directly accessing the App Service. Just to prove the case, the host file entry is modified to map www.azcloudhub.com to the public IP of the App Service and a browser is used to access https://www.azcloudhub.com . It shows that the site is accessible and that certificate used is that which has been issued to the App Service by DigiCert.
 
-![modifyhost](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc14.png)
+![modifyhost](e2eSSLAppGWAppSvc14.png)
 
-![accessappsvc](https://github.com/chianw/chianw/raw/main/e2eSSLAppGWAppSvc13.png)
+![accessappsvc](e2eSSLAppGWAppSvc13.png)
