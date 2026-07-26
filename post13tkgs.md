@@ -5,7 +5,7 @@ vSphere with Tanzu (TKGS) can be deployed on vSphere Networking or on NSX-T netw
 
 **Logical Diagram** - Shows the Supervisor Cluster Control VMs as well as a vSphere namespace call "red" behind which sits two TKGS K8S clusters
 
-![tkgs1](https://github.com/chianw/chianw/blob/main/tkgs1.png)
+![tkgs1](tkgs1.png)
 
 
 
@@ -16,13 +16,13 @@ vSphere with Tanzu (TKGS) can be deployed on vSphere Networking or on NSX-T netw
 
 In addition, there is a fixed set of default rules that allows ALL incoming traffic to reach the Supervisor Control VM logical segment, allows all egress traffic from all Tanzu logical segments behind T1 routers and blocks ingress traffic to all Tanzu logical segments behind T1 routers.
 
-![tkgs2](https://github.com/chianw/chianw/blob/main/tkgs2.png)
+![tkgs2](tkgs2.png)
 
 
 
 **Default GFW rules** - the default GFW rules on the T1 for "red" vSphere namespace allows ALL traffic from both in/out directions
 
-![tkgs3](https://github.com/chianw/chianw/blob/main/tkgs3.png)
+![tkgs3](tkgs3.png)
 
 
 **Default NAT rules** - these are the default NAT rules on the vSphere namespace T1 router
@@ -31,9 +31,9 @@ The default behaviour from these rules are:
 2. Traffic from Tanzu logical segment to ingress CIDR will not have any NAT
 3. All other traffic will SNAT to the Egress CIDR IP assigned to the T1 namespace router
 
-![tkgs4](https://github.com/chianw/chianw/blob/main/tkgs4.png)
+![tkgs4](tkgs4.png)
 
 
 **Namespace, Ingress and Egress CIDRS**
 
-![tkgs5](https://github.com/chianw/chianw/blob/main/tkgs5.png)
+![tkgs5](tkgs5.png)

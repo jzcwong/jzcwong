@@ -12,16 +12,16 @@ However, I wanted to be able to manually trigger my pipeline as I'm doing variou
 
 ## Select and Edit the pipeline
 
-![adoci1.png](https://github.com/chianw/chianw/blob/main/adoci1.png)
+![adoci1.png](adoci1.png)
 
 
 ## Select the 3 ellipse on the top right side and choose Triggers
 
-![adoci2.png](https://github.com/chianw/chianw/blob/main/adoci2.png)
+![adoci2.png](adoci2.png)
 
 
 ## Override the YAML configuration trigger
 
-![adoci3.png](https://github.com/chianw/chianw/blob/main/adoci3.png)
+![adoci3.png](adoci3.png)
 
 Select disable Continuous Integration and then Save

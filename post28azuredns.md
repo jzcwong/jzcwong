@@ -15,4 +15,4 @@ In the test setup, there are two virtual networks peered with each other:
 - In this way, a VM in the contoso.com virtual network is able to resolve *.contoso.com and *.fabrikam.com by sending DNS queries to the inbound interface of the private DNS resolver in contoso.com virtual network
 - Similarly, a VM in the fabrikam.com virtual network is able to resolve *.fabrikam.com and *.contoso.com by sending DNS queries to the inbound interface of the private DNS resolver in fabrikam.com virtual network
 
-![azurednsdiagram.png](https://github.com/chianw/chianw/blob/main/azurednsdiagram.png)
+![azurednsdiagram.png](azurednsdiagram.png)

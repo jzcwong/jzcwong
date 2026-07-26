@@ -32,9 +32,9 @@ docker.io/antrea/antrea-advanced-debian:v1.2.3_vmware.3                         
 
 After the steps above you can continue with the Antrea installation by directly applying the manifest file that came bundled in the zip file. Once done Antrea CNI is installed.
 
-![antreainstall](https://github.com/chianw/chianw/blob/main/antreainstall.png)
+![antreainstall](antreainstall.png)
 
 You can verify as below
 
 
-![antreaverify](https://github.com/chianw/chianw/blob/main/antreaverify.png)
+![antreaverify](antreaverify.png)
