@@ -16,14 +16,14 @@ az resource update --resource-group <resource-group-name --name ftp --namespace 
 ```
 You can check via the portal as well
 
-![basicauthportal](https://github.com/chianw/chianw/raw/main/basicauthappsvc.png)
+![basicauthportal](basicauthappsvc.png)
 
 
 
 ## Reset or update credentials for basic auth via portal
 Here you can reset or update the password for the User Scope credentials
 
-![resetbasicauthportal](https://github.com/chianw/chianw/raw/main/resetbasicauthappsvc.png)
+![resetbasicauthportal](resetbasicauthappsvc.png)
 
 
 ## Log into the URL for kudo/SCM supporting basic authentication

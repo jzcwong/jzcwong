@@ -11,7 +11,7 @@ The important points to note:
  - there are 2 listeners, 2 rules, 2 backend settings and 2 custom health probes. One set for www.contoso.com and the other for www.fabrikam.com 
 
 A diagram for this is shown below
-![Overview](https://github.com/chianw/chianw/raw/main/appgwmultisitessldiagram.png)
+![Overview](appgwmultisitessldiagram.png)
 
 
 > The steps of creating the Application Gateway and the backend pools are not explained in detail in this post. Rather the more important points/caveats are highlighted
@@ -23,7 +23,7 @@ The certificate associated with frontend IP is not the same as the certificates 
 
 Below is the example used for the contoso listener. This is to be repeated for the fabrikam listener
 
-![Listener](https://github.com/chianw/chianw/raw/main/appgwmultissl10.png)
+![Listener](appgwmultissl10.png)
 
 
 
@@ -31,33 +31,33 @@ Below is the example used for the contoso listener. This is to be repeated for t
 
 For App GW v2, the root CA that is used to sign and issue the certificate for the backend web server must be uploaded into App GW in order for end-to-end SSL encryption to be achieved. This needs to be done for the root CA for contoso.com and fabrikam.com and is done on the backend settings
 
-![UploadRootCA](https://github.com/chianw/chianw/raw/main/appgwmultissl4.png)
+![UploadRootCA](appgwmultissl4.png)
 
 The backend setting must also be configured to override the hostname with the appropriate FQDN for each domain
 
-![OverrideHostname](https://github.com/chianw/chianw/raw/main/appgwmultissl5.png)
+![OverrideHostname](appgwmultissl5.png)
 
 
 ## Health probe - specify FQDN and Path
 
 For each of contoso.com and fabrikam.com you need to specify the hostname and path. The example shown below is for contoso.com 
 
-![HealthProbe](https://github.com/chianw/chianw/raw/main/appgwmultissl7.png)
+![HealthProbe](appgwmultissl7.png)
 
 
 ## Test client settings
 
 To simulate DNS resolving www.contoso.com and www.fabrikam.com to the App GW's frontend IP, the host file in the Windows client is edited and the following entries are added as shown. 
 
-![WindowsClientDNS](https://github.com/chianw/chianw/raw/main/appgwmultissl1.png)
+![WindowsClientDNS](appgwmultissl1.png)
 
 
 ## Test and confirm 
 
 Browse to https://contoso.com and https://fabrikam.com from the Windows test client. Verify that pages load and analyse the certificate presented. 
 
-![WindowsClientDNS](https://github.com/chianw/chianw/raw/main/appgwmultissl14.png)
+![WindowsClientDNS](appgwmultissl14.png)
 
 
-![WindowsClientDNS](https://github.com/chianw/chianw/raw/main/appgwmultissl15.png)
+![WindowsClientDNS](appgwmultissl15.png)
 

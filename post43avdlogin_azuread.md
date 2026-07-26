@@ -7,13 +7,13 @@ To use a user account from Azure AD to log into Azure Virtual Desktop session ho
  - if you are using Windows client to access the Azure Virtual Desktop, make sure you use the [Remote Desktop Client](https://learn.microsoft.com/en-gb/azure/virtual-desktop/users/connect-windows?tabs=subscribe) and not the [Remote Desktop App](https://learn.microsoft.com/en-gb/azure/virtual-desktop/users/connect-microsoft-store) , the Remote Desktop App does not support Azure AD joined session hosts as mentioned [here](https://learn.microsoft.com/en-gb/azure/virtual-desktop/azure-ad-joined-session-hosts#known-limitations)
 
 ## Enable Azure AD Single Sign-on for host pool RDP properties
-![avdrdpssoproperty](https://github.com/chianw/chianw/raw/main/avdrdpssoproperty.png)
+![avdrdpssoproperty](avdrdpssoproperty.png)
 
 ## Custom RDP property on host pool to allow log-in to Azure Virtual Desktop from non-domain joined clients
-![avdcustomrdpl](https://github.com/chianw/chianw/raw/main/avdhostpoolrdpproperties.png)
+![avdcustomrdpl](avdhostpoolrdpproperties.png)
 
 ## User account given **Virtual Machine User Login** credentials at Resource Group containing AVD
-![advvirtualmachinelogin](https://github.com/chianw/chianw/raw/main/advvirtualmachinelogin.png)
+![advvirtualmachinelogin](advvirtualmachinelogin.png)
 
 For more information about creating your own custom images for Azure Virtual Desktop, see:
 - [Creating golden images for Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-golden-image)
