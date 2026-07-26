@@ -6,9 +6,9 @@ In this post, I'll describe how you can view the gateway firewall logs on NSX-T 
 
 **Step 1** - first enable logging for the specific firewall rule in NSX-T manager via NSX-T manager web interface. In this example, the default rule in my t0-core router is configured to drop all traffic with a white-list model and logging is enabled for the rule.
 
-![gfw01](https://github.com/chianw/chianw/blob/main/gfw01.png)
+![gfw01](gfw01.png)
 
-![gfw02](https://github.com/chianw/chianw/blob/main/gfw02.png)
+![gfw02](gfw02.png)
 
 **Step 2** - Identify the active T0 instance on the edge node. For stateful firewalling, the T0/T1 routers need to be deployed in active/standby manner on the edge clusters. Initially there is no connection session.
 

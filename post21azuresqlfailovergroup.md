@@ -9,49 +9,49 @@ In this post, auto failover group of Azure SQL is being tested. Azure SQL Databa
 
 As setting up Azure SQL server is relatively straightforward, the step-by-step details of doing so are not shown for brevity. Azure SQL Database is used in this example, as shown below. The below resources are all created in the same resource-group. To simplify testing, the database firewalls are configured to allow access from my public IP and basic user/password for SQL authentication is being used. The sample database available from Azure is used.
 
-![01createsqldb.png](https://github.com/chianw/chianw/blob/main/01createsqldb.png)
+![01createsqldb.png](01createsqldb.png)
 
 **2. Create failover group**
 
 Once the primary SQL server is created, the failover group can be configured.
 
-![02addfailovergrp.png](https://github.com/chianw/chianw/blob/main/02addfailovergrp.png)
+![02addfailovergrp.png](02addfailovergrp.png)
 
 Give the failover group a name, and you can create the corresponding secondary SQL server
 
-![03createfailovergrp.png](https://github.com/chianw/chianw/blob/main/03createfailovergrp.png)
+![03createfailovergrp.png](03createfailovergrp.png)
 
 The secondary server details, it is set up in Japan
 
-![04newsvrfailovergrp.png](https://github.com/chianw/chianw/blob/main/04newsvrfailovergrp.png)
+![04newsvrfailovergrp.png](04newsvrfailovergrp.png)
 
 The database which is selected to be included in the failover group
 
-![05dbforfailover.png](https://github.com/chianw/chianw/blob/main/05dbforfailover.png)
+![05dbforfailover.png](05dbforfailover.png)
 
 
 **3. Verify that the failover group is set up successfully**
 
 From the GUI, you can see the primary and secondary SQL servers in Australia and Japan respectively.
 
-![06failovergrpcomplete.png](https://github.com/chianw/chianw/blob/main/06failovergrpcomplete.png)
+![06failovergrpcomplete.png](06failovergrpcomplete.png)
 
 View the FQDN for accessing the failover group
 
-![07failovergrpcomplete1.png](https://github.com/chianw/chianw/blob/main/07failovergrpcomplete1.png)
+![07failovergrpcomplete1.png](07failovergrpcomplete1.png)
 
 Check the primary and secondary SQL server
 
-![08failovergrpcomplete2.png](https://github.com/chianw/chianw/blob/main/08failovergrpcomplete2.png)
+![08failovergrpcomplete2.png](08failovergrpcomplete2.png)
 
-![12sqlsvrsummary.png](https://github.com/chianw/chianw/blob/main/12sqlsvrsummary.png)
+![12sqlsvrsummary.png](12sqlsvrsummary.png)
 
 
 **4. Use Azure Data Studio to connect to SQL servers**
 
 The FQDN of the primary and secondary SQL servers are used  here. Before this, make sure that the database firewalls are configured to allow access from your public IP.
 
-![09azdatastudioconnect.png](https://github.com/chianw/chianw/blob/main/09azdatastudioconnect.png)
+![09azdatastudioconnect.png](09azdatastudioconnect.png)
 
 
 
@@ -59,39 +59,39 @@ The FQDN of the primary and secondary SQL servers are used  here. Before this, m
 
 Read from secondary SQL server in Japan
 
-![14readsqlsvrsecresults.png](https://github.com/chianw/chianw/blob/main/14readsqlsvrsecresults.png)
+![14readsqlsvrsecresults.png](14readsqlsvrsecresults.png)
 
 Connect to failover group FQDN
 
-![15connectsqlvip.png](https://github.com/chianw/chianw/blob/main/15connectsqlvip.png)
+![15connectsqlvip.png](15connectsqlvip.png)
 
 Read from failover group FQDN
 
-![17readsqlvipresults.png](https://github.com/chianw/chianw/blob/main/17readsqlvipresults.png)
+![17readsqlvipresults.png](17readsqlvipresults.png)
 
 
 **6. Insert entry via failover group FQDN**  
 
 Here we insert a new entry via the failover group FQDN. This should direct to the primary database in Australia for the insertion, which asynchronously updates the secondary database in Japan.
 
-![18insertsqlvip.png](https://github.com/chianw/chianw/blob/main/18insertsqlvip.png)
+![18insertsqlvip.png](18insertsqlvip.png)
 
 Read from failover group FQDN
 
-![19readsqlvip.png](https://github.com/chianw/chianw/blob/main/19readsqlvip.png)
+![19readsqlvip.png](19readsqlvip.png)
 
 Read from secondary SQL server
 
-![20readsecsql.png](https://github.com/chianw/chianw/blob/main/20readsecsql.png)
+![20readsecsql.png](20readsecsql.png)
 
 Read from primary SQL server
 
-![21readprisql.png](https://github.com/chianw/chianw/blob/main/21readprisql.png)
+![21readprisql.png](21readprisql.png)
 
 
 **7. Perform insert operation on database in Japan SQL server and observe the failure since it is read-only in secondary state**  
 
-![22insertsecsqlfailure.png](https://github.com/chianw/chianw/blob/main/22insertsecsqlfailure.png)
+![22insertsecsqlfailure.png](22insertsecsqlfailure.png)
 
 
 
@@ -99,36 +99,36 @@ Read from primary SQL server
 
 Using Azure GUI to trigger failover
 
-![27triggerfailover.png](https://github.com/chianw/chianw/blob/main/27triggerfailover.png)
+![27triggerfailover.png](27triggerfailover.png)
 
-![28triggerfailover1.png](https://github.com/chianw/chianw/blob/main/28triggerfailover1.png)
+![28triggerfailover1.png](28triggerfailover1.png)
 
 Failover in progress
 
-![29failoverinprogress.png](https://github.com/chianw/chianw/blob/main/29failoverinprogress.png)
+![29failoverinprogress.png](29failoverinprogress.png)
 
 Failover successful
 
-![30failoversuccess.png](https://github.com/chianw/chianw/blob/main/30failoversuccess.png)
+![30failoversuccess.png](30failoversuccess.png)
 
-![31failoversuccess1.png](https://github.com/chianw/chianw/blob/main/31failoversuccess1.png)
+![31failoversuccess1.png](31failoversuccess1.png)
 
 
 **8. Perform insertion operation via failover group FQDN after failover**  
 
 Insert via failover group FQDN
 
-![32insertsqlvippostfailure.png](https://github.com/chianw/chianw/blob/main/32insertsqlvippostfailure.png)
+![32insertsqlvippostfailure.png](32insertsqlvippostfailure.png)
 
 Read is successful from Japan database
 
-![33readsecsqlpostfailure.png](https://github.com/chianw/chianw/blob/main/33readsecsqlpostfailure.png)
+![33readsecsqlpostfailure.png](33readsecsqlpostfailure.png)
 
 Read is successful from Australia database
 
-![34readprisqlpostfailure.png](https://github.com/chianw/chianw/blob/main/34readprisqlpostfailure.png)
+![34readprisqlpostfailure.png](34readprisqlpostfailure.png)
 
 
 **9. Now the Australia database is secondary, any insert operation on it fails as it is read-only**  
 
-![35insertprisqlpostfailure.png](https://github.com/chianw/chianw/blob/main/35insertprisqlpostfailure.png)
+![35insertprisqlpostfailure.png](35insertprisqlpostfailure.png)

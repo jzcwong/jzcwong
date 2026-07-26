@@ -10,27 +10,27 @@ In this step an Azure DNS zone of azcloudhub.com is created and the 4 Azure DNS 
 
 It is important to add an APEX record into the Azure DNS zone of azcloudhub.com if it does not exist already. This is so that the APEX domain is available for selection from the drop down box when creating the custom domain from Azure Front Door. See below screenshot.
 
-![APEXrecord.png](https://github.com/chianw/chianw/blob/main/APEXrecord.png)
+![APEXrecord.png](APEXrecord.png)
 
 Replace GoDaddy's DNS servers with all four of Azure DNS servers.
 
-![afdapexdomain2.png](https://github.com/chianw/chianw/blob/main/afdapexdomain2.png)
+![afdapexdomain2.png](afdapexdomain2.png)
 
 As a result, godaddy's DNS configuration portal states that the management of DNS for this domain is no longer under godaddy which is expected since we are using Azure DNS instead
 
-![afdapexdomain3.png](https://github.com/chianw/chianw/blob/main/afdapexdomain3.png)
+![afdapexdomain3.png](afdapexdomain3.png)
 
 **Create the domain azcloudhub.com in Azure Front Door**
 
 Here you choose Non-Azure validated domain since it has not been validated yet, select Azure-managed DNS and select the correct DNS zone and its APEX record. To have Azure generate a certificate for this APEX domain, select AFD-managed for HTTPS
 
-![afdapexdomain4.png](https://github.com/chianw/chianw/blob/main/afdapexdomain4.png)
+![afdapexdomain4.png](afdapexdomain4.png)
 
 **Validate the domain and associate with Front Door endpoint**
 
 After the domain is created, click on the pending validation link and it will bring up a wizard GUI to auto-add a verification TXT record to the Azure DNS zone of azcloudhub.com . After which you associate the domain to the Azure Front Door endpoint and on the link under DNS state column click on it to have it auto-add a CNAME record for the Azure FrontDoor endpoint in the Azure DNS zone.
 
-![afdapexdomain5.png](https://github.com/chianw/chianw/blob/main/afdapexdomain5.png)
+![afdapexdomain5.png](afdapexdomain5.png)
 
 
 
@@ -38,7 +38,7 @@ After the domain is created, click on the pending validation link and it will br
 
 If the earlier step was done correctly, you should see a validation TXT record and CNAME record added in the DNS zone. Note that the original APEX record in the domain was over-written automatically to point to Azure Front Door.
 
-![afdapexdomain1.png](https://github.com/chianw/chianw/blob/main/afdapexdomain1.png)
+![afdapexdomain1.png](afdapexdomain1.png)
 
 
 
@@ -46,6 +46,6 @@ If the earlier step was done correctly, you should see a validation TXT record a
 
 Here you should see the App Service landing page and you should not get any SSL certificate errors as Azure provided the certificate for this APEX domain.
 
-![afdapexdomain6.png](https://github.com/chianw/chianw/blob/main/afdapexdomain6.png)
+![afdapexdomain6.png](afdapexdomain6.png)
 
-![afdapexdomain7.png](https://github.com/chianw/chianw/blob/main/afdapexdomain7.png)
+![afdapexdomain7.png](afdapexdomain7.png)

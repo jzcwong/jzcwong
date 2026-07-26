@@ -4,12 +4,12 @@ I was testing end-to-end TLS encryption using Azure Application Gateway v1 and a
 
 > Note for end to end SSL on Application Gateway v1, the backend web server certificate should be uploaded to the Application Gateway in order for it to trust the web server. In Application Gateway v2, you must upload the root CA public certificate to the Application Gateway instead of the backend web server certificate and this root CA must be the one that signed and issued the web server certificate.
 
-![appgwv1-uploadwebcert.png](https://github.com/chianw/chianw/blob/main/appgwv1-uploadwebcert.png)
+![appgwv1-uploadwebcert.png](appgwv1-uploadwebcert.png)
 
 
 > The requirement to upload root CA certificate for Application Gateway v2 is documented [here](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-backend-health-troubleshooting#trusted-root-certificate-mismatch)
 
-![appgwv2-uploadwebcert.png](https://github.com/chianw/chianw/blob/main/appgwv2-uploadwebcert.png)
+![appgwv2-uploadwebcert.png](appgwv2-uploadwebcert.png)
 
 
 
@@ -17,28 +17,28 @@ With this setup, this means there is end-to-end TLS between web client and Appli
 - CN=alpharednginx.io for the web server
 - CN=bravoblue.io for the application gateway
 
-![end2endssl.png](https://github.com/chianw/chianw/blob/main/end2endssl.png)
+![end2endssl.png](end2endssl.png)
 
 This post aims to document some of the settings on the health probe and backend settings of the Application Gateway to get the setup to work.
 
 **1. Set the correct hostname for the Backend Settings of the Application Gateway, this should be equal to the CN of the certificate used HTTPS-enabled web server**
 
 
-![backendsettings_correct.png](https://github.com/chianw/chianw/blob/main/backendsettings_correct.png)
+![backendsettings_correct.png](backendsettings_correct.png)
 
 
 **2. Set the Host value in the health probe to the equal to the certificate Common Name used by the web server**
 
-![healthprobe.png](https://github.com/chianw/chianw/blob/main/healthprobe.png)
+![healthprobe.png](healthprobe.png)
 
 
 **3. Browsing directly to the web server reveals its certificate with CN=alpahrednginx.io**
 
-![webserver.png](https://github.com/chianw/chianw/blob/main/webserver.png)
+![webserver.png](webserver.png)
 
 **4. Browsing to the Application Gateway public IP shows its certificate with CN=bravoblue.io**
 
-![appgw.png](https://github.com/chianw/chianw/blob/main/appgw.png)
+![appgw.png](appgw.png)
 
 
 

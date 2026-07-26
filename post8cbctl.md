@@ -6,19 +6,19 @@ The official documentation describing how to install and use cbctl is [here](htt
 **Step 1** - Login into CB cloud and create a CLI configuration
 Go to Inventory > Kubernetes > K8S Clusters > CLI config . Give your CLI config a name that you can identify and a built step, for e.g. development
 
-![cbctl1](https://github.com/chianw/chianw/blob/main/cbctl1.png)
+![cbctl1](cbctl1.png)
 
 **Step 2** - Generate your API key and give it a name
 
-![cbctl2](https://github.com/chianw/chianw/blob/main/cbctl2.png)
+![cbctl2](cbctl2.png)
 
-![cbctl3](https://github.com/chianw/chianw/blob/main/cbctl3.png)
+![cbctl3](cbctl3.png)
 
 **Step 3** - Create a ~/.cbctl on the host where cbctl is to be installed and paste the commands into a .cbctl.yaml file . Download the binary from the link given in the final step of installation and move it into your PATH
 
-![cbctl4](https://github.com/chianw/chianw/blob/main/cbctl4.png)
+![cbctl4](cbctl4.png)
 
 **Step 4** - Test to see if container image scanning works
 
-![cbctl5](https://github.com/chianw/chianw/blob/main/cbctl5.png)
+![cbctl5](cbctl5.png)
 

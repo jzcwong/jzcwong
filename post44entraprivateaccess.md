@@ -4,7 +4,7 @@ In this example, [Global Secure Access](https://learn.microsoft.com/en-gb/azure/
 
 The remote client is a VM in another virtual network that has the Global Secure Access (GSA) client installed. This VM **must** be Azure AD joined, not just registered. The GSA client will make outbound encrypted HTTP/2 GRPC connections to Microsoft Cloud. 
 
-![Entra Private Access](https://github.com/chianw/chianw/blob/main/entraprivateaccess.png)
+![Entra Private Access](entraprivateaccess.png)
 
 ## Advantages
 - there is no need to open up inbound ports on the on-premise network to allow remote clients to access the resources within it
@@ -23,83 +23,83 @@ The following are pre-requisites for the solution:
 ### Step 1 - Download the application proxy connector from Entra Admin Center
 The Entra Admin Center is accessible at https://entra.microsoft.com and you have to log in with your credentials as a user with at least Global Secure Administrator role. Download the application proxy connector and note the installation pre-requisites.
 
-![entraprivateaccess1.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess1.png)
+![entraprivateaccess1.png](entraprivateaccess1.png)
 
 ### Step 2 - install the application proxy connector
 Before installing application proxy connector, first disable IE security configuration. 
 
-![entraprivateaccess5.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess5.png)
+![entraprivateaccess5.png](entraprivateaccess5.png)
 
 During installation you'll be prompted to sign into Entra
 
-![entraprivateaccess6.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess6.png)
+![entraprivateaccess6.png](entraprivateaccess6.png)
 
 After successful login, the installation of application proxy connector should be successful.
 
-![entraprivateaccess8.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess8.png)
+![entraprivateaccess8.png](entraprivateaccess8.png)
 
 ### Step 3 - Verify successful application proxy connector installation
 You can check on Entra admin center that the connector is registered.
 
-![entraprivateaccess9.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess9.png)
+![entraprivateaccess9.png](entraprivateaccess9.png)
 
 You can also check on the Windows services of the host that the connector is running.
 
-![entraprivateaccess10.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess10.png)
+![entraprivateaccess10.png](entraprivateaccess10.png)
 
 ### Step 4 - Create connector group and add the connector to it
 Here we create a connector group and add the connector to it. We also verify that the connector status is Active
 
-![entraprivateaccess11.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess11.png)
+![entraprivateaccess11.png](entraprivateaccess11.png)
 
 Connector group with connector status as Active. Notice the recommendation to have at least 2 connectors in a group. Since this is for testing we will only use 1 connector
 
-![entraprivateaccess12.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess12.png)
+![entraprivateaccess12.png](entraprivateaccess12.png)
 
 ### Step 5 - Create new enterprise application and add application segment, followed by adding Azure AD user to the application
 Here we create a new application to represent the on-premise IIS web server. Associate it with the connector group created earlier and define the IP/port of the on-premise IIS webserver in the application segment. 
 
-![entraprivateaccess29.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess29.png)
+![entraprivateaccess29.png](entraprivateaccess29.png)
 
 After the enterprise application is created, click on it and go to ***Users and groups*** to add the users or groups that are allowed to use the application
 
-![entraprivateaccess19.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess19.png)
+![entraprivateaccess19.png](entraprivateaccess19.png)
 
 ### Step 6 - Enable Private Access Profile traffic forwarding
 
 From Entra Admin portal, enable Private Access Profile traffic forwarding and check that it is linked to the Enterprise application created
 
-![entraprivateaccess30.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess30.png)
+![entraprivateaccess30.png](entraprivateaccess30.png)
 
 ### Step 7 - Join the remote access client to Azure AD
 
 On the remote access client, go to ***Set up work or school account*** and the choose the option of ***Join this device to Azure Active Directory***. Follow the rest of the steps in the wizard making sure you sign in as the user who is allowed to use the enterprise application.
 
-![entraprivateaccess22.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess22.png)
+![entraprivateaccess22.png](entraprivateaccess22.png)
 
 View the successful joining of the device to Azure AD
 
-![entraprivateaccess23.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess23.png)
+![entraprivateaccess23.png](entraprivateaccess23.png)
 
 On AzureAD, the device is shown as ***Azure AD Joined***
 
-![entraprivateaccess24.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess24.png)
+![entraprivateaccess24.png](entraprivateaccess24.png)
 
 ### Step 8 - Download the Global Secure Access client from Entra Admin portal and install on the remote AzureAD-joined client
 
-![entraprivateaccess20.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess20.png)
+![entraprivateaccess20.png](entraprivateaccess20.png)
 
 The GSA client installation is straightforward, just launch the installer on the remote access client and follow the step by step instructions. 
 
-![entraprivateaccess21.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess21.png)
+![entraprivateaccess21.png](entraprivateaccess21.png)
 
 ### Step 9 - Test access to IIS web server from remote access client
 
 At this stage, you will be able to launch the GSA client which will acquire traffic to the IIS web server 10.0.0.5 on TCP port 80. Browsing to http://10.0.0.5 on the remote access client should bring up the page for the IIS web server. 
 
-![entraprivateaccess25.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess25.png)
+![entraprivateaccess25.png](entraprivateaccess25.png)
 
-![entraprivateaccess26.png](https://github.com/chianw/chianw/blob/main/entraprivateaccess26.png)
+![entraprivateaccess26.png](entraprivateaccess26.png)
 
 
 #### Useful links

@@ -11,88 +11,88 @@ All the 3 vnets are in different resource groups, subscriptions and regions.
 
 3 separate resource groups are created, one for the hub vnet and two for the spoke vnets. This is to illustrate that vnet peering can happen across regions, subscriptions and resource groups
 
-![01hubspokevgwpng](https://github.com/chianw/chianw/blob/main/01hubspokevgw.png)
+![01hubspokevgwpng](01hubspokevgw.png)
 
 **2. Hub Resource Group items**
 
 The hub resource groups contains the hub vnet, and the virtual network gateway.
 
-![02hubspokevgw.png](https://github.com/chianw/chianw/blob/main/02hubspokevgw.png)
+![02hubspokevgw.png](02hubspokevgw.png)
 
 The hub virtual network has a subnet dedicated to the virtual network gateway. This must be named GatewaySubnet and a minimum subnet size is /27
 
-![03hubspokevgw.png](https://github.com/chianw/chianw/blob/main/03hubspokevgw.png)
+![03hubspokevgw.png](03hubspokevgw.png)
 
 The hub virtual network gateway appears as connected to the GatewaySubnet
 
-![04hubspokevgw.png](https://github.com/chianw/chianw/blob/main/04hubspokevgw.png)
+![04hubspokevgw.png](04hubspokevgw.png)
 
 
 **3. Spoke 1 resource group items**
 
 Spoke 1 has a vnet in Australia East and a custom route table to put in a static route for Spoke 2 via hub virtual network gateway. It also has a VM from where we use to test connectivity to Spoke 2.
 
-![05hubspokevgw.png](https://github.com/chianw/chianw/blob/main/05hubspokevgw.png)
+![05hubspokevgw.png](05hubspokevgw.png)
 
 Spoke 1 VM connected to the subnet in Spoke 1
 
-![06hubspokevgw.png](https://github.com/chianw/chianw/blob/main/06hubspokevgw.png)
+![06hubspokevgw.png](06hubspokevgw.png)
 
 
 **4. Spoke 2 resource group items**
 
 Spoke 2 has a vnet in East Asia and a custom route table to put in a static route for Spoke 1 via hub virtual network gateway. It also has a VM from where we use to test connectivity to Spoke 1.
 
-![07hubspokevgw.png](https://github.com/chianw/chianw/blob/main/07hubspokevgw.png)
+![07hubspokevgw.png](07hubspokevgw.png)
 
 Spoke 2 VM connected to the subnet in Spoke 2
 
-![08hubspokevgw.png](https://github.com/chianw/chianw/blob/main/08hubspokevgw.png)
+![08hubspokevgw.png](08hubspokevgw.png)
 
 
 **5. Virtual Network Peering settings**
 
 Hub vnet is peered to Spoke 1 and Spoke 2 vnets. These peerings are across subscriptions, resource-groups and regions.
 
-![09hubspokevgw.png](https://github.com/chianw/chianw/blob/main/09hubspokevgw.png)
+![09hubspokevgw.png](09hubspokevgw.png)
 
 Hub to spoke 1 vnet peering. Note the setting of *use this virtual network's gateway or Route Server*
 
-![10hubspokevgw.png](https://github.com/chianw/chianw/blob/main/10hubspokevgw.png)
+![10hubspokevgw.png](10hubspokevgw.png)
 
 Hub to spoke 2 vnet peering. Note the setting of *use this virtual network's gateway or Route Server*
 
-![11hubspokevgw.png](https://github.com/chianw/chianw/blob/main/11hubspokevgw.png)
+![11hubspokevgw.png](11hubspokevgw.png)
 
 Spoke 1 to Hub vnet peering. Note the setting of *use the remote virtual network's gateway or Route Server*
 
-![12hubspokevgw.png](https://github.com/chianw/chianw/blob/main/12hubspokevgw.png)
+![12hubspokevgw.png](12hubspokevgw.png)
 
 Spoke 2 to Hub vnet peering. Note the setting of *use the remote virtual network's gateway or Route Server*
 
-![13hubspokevgw.png](https://github.com/chianw/chianw/blob/main/13hubspokevgw.png)
+![13hubspokevgw.png](13hubspokevgw.png)
 
 
 **4. Custom Route Tables for Spoke 1 and Spoke 2**
 
 A custom route table is created for Spoke 1 and associated with the subnet in Spoke 1, and a static route for Spoke 2 via virtual network gateway is added in this route table
 
-![14hubspokevgw.png](https://github.com/chianw/chianw/blob/main/14hubspokevgw.png)
+![14hubspokevgw.png](14hubspokevgw.png)
 
 A custom route table is created for Spoke 2 and associated with the subnet in Spoke 2, and a static route for Spoke 1 via virtual network gateway is added in this route table
 
-![15hubspokevgw.png](https://github.com/chianw/chianw/blob/main/15hubspokevgw.png)
+![15hubspokevgw.png](15hubspokevgw.png)
 
 
 **5. Effective routes for Spoke VMs**
 
 Effective routes for spoke 1 VM nic shows the route for Spoke 2 via virtual network gateway
 
-![16hubspokevgw.png](https://github.com/chianw/chianw/blob/main/16hubspokevgw.png)
+![16hubspokevgw.png](16hubspokevgw.png)
 
 Effective routes for spoke 2 VM nic shows the route for Spoke 1 via virtual network gateway
 
-![17hubspokevgw.png](https://github.com/chianw/chianw/blob/main/17hubspokevgw.png)
+![17hubspokevgw.png](17hubspokevgw.png)
 
 
 
@@ -100,8 +100,8 @@ Effective routes for spoke 2 VM nic shows the route for Spoke 1 via virtual netw
 
 Able to SSH from spoke 1 to spoke 2
 
-![18hubspokevgw.png](https://github.com/chianw/chianw/blob/main/18hubspokevgw.png)
+![18hubspokevgw.png](18hubspokevgw.png)
 
 Able to SSH from spoke 2 to spoke 1
 
-![19hubspokevgw.png](https://github.com/chianw/chianw/blob/main/19hubspokevgw.png)
+![19hubspokevgw.png](19hubspokevgw.png)

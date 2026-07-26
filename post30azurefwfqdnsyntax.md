@@ -8,26 +8,26 @@ This post aims to document the supported syntax when using FQDN filtering in App
 
 Note that in Azure Firewall, the rule collections with lower priority number gets processed first and the rules are terminating, which means firewall rule evaluation stops once there is a match.
 
-![ruleset.png](https://github.com/chianw/chianw/blob/main/ruleset.png)
+![ruleset.png](ruleset.png)
 
 
 
 **FQDN filtering syntax to block \*.microsoft.com**
 
 
-![denyapplicationrule.png](https://github.com/chianw/chianw/blob/main/denyapplicationrule.png)
+![denyapplicationrule.png](denyapplicationrule.png)
 
 
 **FQDN filtering syntax to allow access to all other URLs**
 
-![allowapplicationrule.png](https://github.com/chianw/chianw/blob/main/allowapplicationrule.png)
+![allowapplicationrule.png](allowapplicationrule.png)
 
 
 **Browing to https://windows.microsoft.com is blocked**
 
-![blockresult.png](https://github.com/chianw/chianw/blob/main/blockresult.png)
+![blockresult.png](blockresult.png)
 
 **Browsing to https://ifconfig.me is allowed**
 
-![allowresult.png](https://github.com/chianw/chianw/blob/main/allowresult.png)
+![allowresult.png](allowresult.png)
 

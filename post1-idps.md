@@ -4,18 +4,18 @@ In this post, I'm documenting how you can enable logging when NSX-T distributed 
 
 **Step 1** - first enable logging for the specific distributed IDPS rule in NSX-T manager via NSX-T manager web interface
 
-![idps-log-ui1](https://github.com/chianw/chianw/blob/main/idps-log-ui1.png)
+![idps-log-ui1](idps-log-ui1.png)
 
-![idps-log-ui2](https://github.com/chianw/chianw/blob/main/idps-log-ui2.png)
+![idps-log-ui2](idps-log-ui2.png)
 
 
 **Step 2** - Issue GET RESTful API call to NSX-T manager at the url <em>https://nsx-manager-fqdn/api/v1/global-configs/IdsGlobalConfig</em> . Note that **"global_idsevents_to_syslog_enabled"** will be initially set to false. Also take note of the revision number
   
-![get-idps](https://github.com/chianw/chianw/blob/main/get-idps.png)
+![get-idps](get-idps.png)
   
 **Step 3** - Issue PUT RESTful API call to the same URL above to set **"global_idsevents_to_syslog_enabled"** to true and make sure you use the **same revision number**. Use JSON for the body of the POST message.
 
-![post-idps](https://github.com/chianw/chianw/blob/main/post-idps.png)
+![post-idps](post-idps.png)
 
 **Step 4** - Verify that you see the logs on the ESXi hosts where IDPS events are triggered, see /var/log/nsx-idps/nsx-idps-events.log . The logs can be exported on EVE-JSON format to an external Syslog server. This configuration is done on ESXi host itself via vCenter
   

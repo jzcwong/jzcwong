@@ -9,45 +9,45 @@ In this example, to test the function of policy-based VPN, we establish site-to-
 **VPN Gateway for East US**
 This is configured as Basic SKU with policy-based VPN, take note of the public IP which will be used to configure the local network gateway representing it
 
-![s2spolicyvpn-2.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-2.png)
+![s2spolicyvpn-2.png](s2spolicyvpn-2.png)
 
 **VPN Gateway for West US**
 This is configured as Basic SKU with policy-based VPN, take note of the public IP which will be used to configure the local network gateway representing it
 
-![s2spolicyvpn-3.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-3.png)
+![s2spolicyvpn-3.png](s2spolicyvpn-3.png)
 
 
 **IPSEC site-to-site connection for East US**
 
 Note that status as connected, as the remote gateway is a local network gateway representing West US VPN gateway
 
-![s2spolicyvpn-4.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-4.png)
+![s2spolicyvpn-4.png](s2spolicyvpn-4.png)
 
 
 **IPSEC site-to-site connection for West US**
 
 Note that status as connected, as the remote gateway is a local network gateway representing East US VPN gateway
 
-![s2spolicyvpn-5.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-5.png)
+![s2spolicyvpn-5.png](s2spolicyvpn-5.png)
 
 
 **IPSEC site-to-site connection details for East US**
 
-![s2spolicyvpn-7.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-7.png)
+![s2spolicyvpn-7.png](s2spolicyvpn-7.png)
 
 Uses pre-shared-keys for authentication
 
-![s2spolicyvpn-8.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-8.png)
+![s2spolicyvpn-8.png](s2spolicyvpn-8.png)
 
 Only supports IKEv1
 
-![s2spolicyvpn-9.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-9.png)
+![s2spolicyvpn-9.png](s2spolicyvpn-9.png)
 
 
 
 **Successful connectivity between 2 VMs in East and West US via the site-to-site policy-based VPN**
 
-![s2spolicyvpn-1.png](https://github.com/chianw/chianw/blob/main/s2spolicyvpn-1.png)
+![s2spolicyvpn-1.png](s2spolicyvpn-1.png)
 
 
 
