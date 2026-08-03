@@ -41,6 +41,7 @@ I'm currently working as a multi-cloud security architect in Singapore.
 35. [Comparing AWS Session Manager and EC2 instance connect endpoint for accessing EC2](post50aws_ssm_eic.md) - Dec2025
 36. [Comparing AWS native security tools](post51awssecuritytools.md) - Dec2025
 37. [Immutable subject claims for GitHub Actions OIDC tokens](post52githuboidc.md) - Jul2026
+38. [Installing Prometheus, Grafana, Alert-Manager on EKS with ALB Ingress](post53eksprom.md) - Aug2026
     
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
