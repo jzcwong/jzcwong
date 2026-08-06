@@ -42,7 +42,8 @@ I'm currently working as a multi-cloud security architect in Singapore.
 36. [Comparing AWS native security tools](post51awssecuritytools.md) - Dec2025
 37. [Immutable subject claims for GitHub Actions OIDC tokens](post52githuboidc.md) - Jul2026
 38. [Installing Prometheus, Grafana, Alert-Manager on EKS with ALB Ingress](post53eksprom.md) - Aug2026
-    
+39. [AWS cross-account cross-region PrivateLink example](post54awsprivatelink.md) - Aug2026
+
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
 2. [Copying SSH private key to AWS EC2 bastion host](post18scpaws.md) - May2022
