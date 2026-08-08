@@ -43,6 +43,8 @@ I'm currently working as a multi-cloud security architect in Singapore.
 37. [Immutable subject claims for GitHub Actions OIDC tokens](post52githuboidc.md) - Jul2026
 38. [Installing Prometheus, Grafana, Alert-Manager on EKS with ALB Ingress](post53eksprom.md) - Aug2026
 39. [AWS cross-account cross-region PrivateLink example](post54awsprivatelink.md) - Aug2026
+40. [CrashLoopBackOff on AWS load balancer controller pods](post55awslbcontroller.md) - Aug2026
+51. [Using FluentBit on AWS EKS clusters for pod logging to Cloudwatch](post56fluentbiteks.md) - Aug2026
 
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
