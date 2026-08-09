@@ -45,6 +45,7 @@ I'm currently working as a multi-cloud security architect in Singapore.
 39. [AWS cross-account cross-region PrivateLink example](post54awsprivatelink.md) - Aug2026
 40. [CrashLoopBackOff on AWS load balancer controller pods](post55awslbcontroller.md) - Aug2026
 51. [Using FluentBit on AWS EKS clusters for pod logging to Cloudwatch](post56fluentbiteks.md) - Aug2026
+52. [Lamdba with SQS, SNS and DynamoDB](post57sqslambda.md) - Aug2026
 
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
