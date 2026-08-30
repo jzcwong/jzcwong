@@ -47,6 +47,9 @@ I'm currently working as a multi-cloud security architect in Singapore.
 51. [Using FluentBit on AWS EKS clusters for pod logging to Cloudwatch](post56fluentbiteks.md) - Aug2026
 52. [Lamdba with SQS, SNS and DynamoDB](post57sqslambda.md) - Aug2026
 53. [CloudFront with VPC origin and internal application load balancer](post58cfvpcorigin.md) - Aug2026
+54. [Allow EKS pods to access secrets in Secrets Manager](post59podstosecrets.md) - Aug2026
+55. [Using KEDA for scaling pods in EKS](post60usingkeda.md) - Aug2026
+56. [Cloudwatch for EKS notes](post61ekscloudwatch.md) - Aug2026
 
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
