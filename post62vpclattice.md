@@ -16,6 +16,11 @@ It operates at the DNS layer, handling request-level routing, service discovery 
 - Handles Overlapping IPs: Manages network routing seamlessly even if connected VPCs use overlapping or duplicate IP address ranges
 - Enforces Zero Trust Security: Applies centralized, context-specific authentication and authorization policies directly to service-to-service communication
 
+## Types of association to a Service Network
+
+![latticeassoc.png](latticeassoc.png)
+
+
 ## Scenario
 In this scenario, a Service Network is created in account-1 in us-east-1 region and shared with account-2 via RAM. The Service Network has a VPC association to the default VPC for account-1 in us-east-1 region, and a client ec2 is created in the VPC.
 
