@@ -50,6 +50,7 @@ I'm currently working as a multi-cloud security architect in Singapore.
 54. [Allow EKS pods to access secrets in Secrets Manager](post59podstosecrets.md) - Aug2026
 55. [Using KEDA for scaling pods in EKS](post60usingkeda.md) - Aug2026
 56. [Cloudwatch for EKS notes](post61ekscloudwatch.md) - Aug2026
+57. [VPC lattice setup](post62vpclattice.md) - Sept2026
 
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
