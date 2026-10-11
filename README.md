@@ -51,6 +51,9 @@ I'm currently working as a multi-cloud security architect in Singapore.
 55. [Using KEDA for scaling pods in EKS](post60usingkeda.md) - Aug2026
 56. [Cloudwatch for EKS notes](post61ekscloudwatch.md) - Aug2026
 57. [VPC lattice setup](post62vpclattice.md) - Sept2026
+58. [Using Github CodeQL CLI](post63codeqlcli.md) - Oct2026
+59. [Using External Secrets Operator](post64eso.md) - Oct2026
+
 
 #### AWS
 1. [Installing NGINX in AWS Linux EC2 during cloud-init](post17ec2nginx.md) - April2022
