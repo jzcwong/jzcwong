@@ -53,6 +53,7 @@ I'm currently working as a multi-cloud security architect in Singapore.
 57. [VPC lattice setup](post62vpclattice.md) - Sept2026
 58. [Using Github CodeQL CLI](post63codeqlcli.md) - Oct2026
 59. [Using External Secrets Operator](post64eso.md) - Oct2026
+60. [Using Inspektor Gadget to create seccomp profiles](post65inspektor.md) - Oct2026
 
 
 #### AWS
